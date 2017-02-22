@@ -9,7 +9,7 @@ class Soda < Caffeinated_Beverage
   end
   
   def to_s
-    puts "The average #{num_ounces} soda has #{caffeinate(num_ounces)} of caffeine."
+    puts "The average #{num_ounces} ounce soda has #{caffeinate(num_ounces)} of caffeine."
   end
   
 end
