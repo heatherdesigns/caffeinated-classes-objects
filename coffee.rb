@@ -6,8 +6,8 @@ class Coffee < Caffeinated_Beverage
   
   attr_accessor :shot
   
-  def initialize(shot)
-    super
+  def initialize(num_ounces, shot)
+    super(num_ounces)
     @shot = shot
   end
   
