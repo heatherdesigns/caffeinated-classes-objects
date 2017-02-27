@@ -8,7 +8,7 @@ class Soda < Caffeinated_Beverage
     num_ounces *= 3.75
   end
   
-  def to_s
+  def output
     puts "The average #{num_ounces} ounce soda has #{caffeinate(num_ounces)} of caffeine."
   end
   
