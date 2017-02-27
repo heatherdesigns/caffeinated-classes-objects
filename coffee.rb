@@ -19,7 +19,7 @@ class Coffee < Caffeinated_Beverage
     shot *= 75.0
   end
   
-  def to_s
+  def output
     puts "The average #{num_ounces} ounce coffee has #{caffeinate(num_ounces)} mg of caffeine."
   end
   
