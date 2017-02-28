@@ -6,7 +6,7 @@
 
 class Caffeinated_Beverage
   
-  attr_accessor :beverage, :num_ounces, :caffeine_per_oz, :milk, :flavor
+  attr_accessor :beverage, :num_ounces, :caffeine_per_oz, :milk, :flavor, :shot
   
   def initialize(beverage, num_ounces, caffeine_per_oz) # idea from Yock: option to serve hot or serve cold
     @beverage = beverage
@@ -19,7 +19,7 @@ class Caffeinated_Beverage
   end 
   
   def add_espresso(shot) # 75 mg in a 1 ounce shot of espresso
-    shot *= 75.0
+    @shot = shot * 75.0
   end
   
   def add_milk(milk)
@@ -33,6 +33,12 @@ class Caffeinated_Beverage
   def output
     puts "The average #{num_ounces} ounce #{beverage} has #{caffeinate(num_ounces)} mg of caffeine."
   end 
+  
+  def display_order(order)
+    order.each do |key, value|
+      puts "#{key}: #{value}" 
+    end
+  end
   
 end 
 

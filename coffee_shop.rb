@@ -1,24 +1,82 @@
-# Create queue of customer's caffeinated beverages re: data structures code talk.
-# Add snarky responses to customer orders according to how much caffeine is in their drink.
+# Caffeine per oz
+# coffee = 25 mg
+# tea = 3.5 mg
+# soda = 3.75 mg
 
 require_relative "./caffeinated_beverage.rb"
 
 class CoffeeShop
   
   # create hash to store a single customer's order
-  customer_order = {}
+  customer_order = Hash.new(0)
+  puts customer_order.keys  
+  puts customer_order.values
+ 
+  # first customer order
+  order_1 = Caffeinated_Beverage.new("coffee", 12, 25)
+  customer_order["beverage"]= order_1.beverage   # move hash into caffeinated beverage class and create method to do this automatically
+  customer_order["ounces"]= order_1.num_ounces
+  customer_order["caffeine (mg)"]= order_1.caffeine_per_oz
   
-  # create 5 customer orders
+  order_1.add_milk("almond milk")
+  customer_order["milk"]= order_1.milk
   
+  order_1.add_flavor("vanilla")
+  customer_order["flavor"]= order_1.flavor
   
+  puts "-" * 20; puts "Customer 1:"
+  order_1.display_order(customer_order)
+  
+  # second customer order  
+  order_2 = Caffeinated_Beverage.new("tea", 16, 3.5)
+  customer_order.clear # clear hash from previous order contents
+  customer_order["beverage"]= order_2.beverage
+  customer_order["ounces"]= order_2.num_ounces
+  customer_order["caffeine (mg)"]= order_2.caffeine_per_oz
+  
+  puts "-" * 20; puts "Customer 2:"
+  order_2.display_order(customer_order)  
+
+  # third customer order
+  order_3 = Caffeinated_Beverage.new("soda", 32, 3.75)
+  order_3.add_flavor("cherry")
+  customer_order.clear
+  customer_order["beverage"]= order_3.beverage
+  customer_order["ounces"]= order_3.num_ounces
+  customer_order["caffeine (mg)"]= order_3.caffeine_per_oz
+  customer_order["flavor"]= order_3.flavor
+  
+  puts "-" * 20; puts "Customer 3:"
+  order_3.display_order(customer_order)  
+  
+  # fourth customer order
+  order_4 = Caffeinated_Beverage.new("chai", 8, 3.5)
+  order_4.add_milk("coconut milk")
+  order_4.add_flavor("hazelnut")
+  customer_order.clear
+  customer_order["beverage"]= order_4.beverage
+  customer_order["ounces"]= order_4.num_ounces
+  customer_order["caffeine (mg)"]= order_4.caffeine_per_oz
+  customer_order["milk"]= order_4.milk
+  customer_order["flavor"]= order_4.flavor  
+  
+  puts "-" * 20; puts "Customer 4:"
+  order_4.display_order(customer_order)   
+  
+  # fifth customer order
+  order_5 = Caffeinated_Beverage.new("coffee", 24, 25)
+  order_5.add_espresso(2)
+  customer_order.clear
+  customer_order["beverage"]= order_5.beverage
+  customer_order["ounces"]= order_5.num_ounces
+  customer_order["caffeine (mg)"]= (order_5.caffeine_per_oz + order_5.shot) # add caffeine in espresso
+  
+  puts "-" * 20; puts "Customer 5:"
+  order_5.display_order(customer_order)     
+    
   # create array to store queue of customer order's
   orders = []
   
-  # start customer's order
-  # need size
-  # add espresso - # of shots
-  # add milk
-  # add flavoring  
   # caffeine content is calculated and saved for future reference
   # get customer name
   # internal order id is created
