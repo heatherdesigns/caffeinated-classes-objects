@@ -2,18 +2,23 @@
 # Add snarky responses to customer orders according to how much caffeine is in their drink.
 
 require_relative "./caffeinated_beverage.rb"
-require_relative "./coffee.rb"
-require_relative "./tea.rb"
-require_relative "./soda.rb"
 
 class CoffeeShop
   
-  # need class for orders?
-  # take customer's order - coffee, tea or soda (combine these three classes into the caffeinated beverage class - see notes on Yock's suggestion.)
+  # create hash to store a single customer's order
+  customer_order = {}
+  
+  # create 5 customer orders
+  
+  
+  # create array to store queue of customer order's
+  orders = []
+  
+  # start customer's order
   # need size
   # add espresso - # of shots
-  # add milk - def milk or class Milk?
-  # add flavoring - (this can apply to soda too! think cherry, vanilla or chocolate coke) def flavoring or class Flavoring? 
+  # add milk
+  # add flavoring  
   # caffeine content is calculated and saved for future reference
   # get customer name
   # internal order id is created

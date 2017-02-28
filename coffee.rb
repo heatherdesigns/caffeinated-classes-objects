@@ -15,10 +15,6 @@ class Coffee < Caffeinated_Beverage
     num_ounces *= 25.0
   end
   
-  def add_espresso(shot) # 75 mg in a 1 ounce shot of espresso
-    shot *= 75.0
-  end
-  
   def output
     puts "The average #{num_ounces} ounce coffee has #{caffeinate(num_ounces)} mg of caffeine."
   end
