@@ -22,10 +22,6 @@ class Caffeinated_Beverage
     @shot = shot * 75.0
   end
   
-  def add_flavor(flavor)
-    @flavor = flavor
-  end
-  
   def output
     puts "The average #{num_ounces} ounce #{beverage} has #{caffeinate(num_ounces)} mg of caffeine."
   end 
@@ -37,15 +33,3 @@ class Caffeinated_Beverage
   end
   
 end 
-
-=begin
-drink = Caffeinated_Beverage.new("coffee", 8, 25)
-drink.output
-
-another_drink = Caffeinated_Beverage.new("tea", 16, 3.5)
-another_drink.output
-
-puts "Add "  + another_drink.add_flavor("vanilla") + " to " + another_drink.beverage + "."
-puts "Add " + another_drink.add_milk("almond milk") + " to " + another_drink.beverage + "."
-puts "The customer order is " + another_drink.beverage + " with " + another_drink.milk + " and " + another_drink.flavor + "." 
-=end

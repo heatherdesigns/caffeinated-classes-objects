@@ -5,6 +5,7 @@
 
 require_relative "./caffeinated_beverage.rb"
 require_relative "./milk.rb"
+require_relative "./flavor.rb"
 
 eight_oz_drink = Caffeinated_Beverage.new("coffee", 8, 25)
 eight_oz_drink.output
