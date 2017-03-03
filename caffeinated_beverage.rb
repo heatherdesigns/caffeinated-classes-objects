@@ -22,10 +22,6 @@ class Caffeinated_Beverage
     @shot = shot * 75.0
   end
   
-  def add_milk(milk)
-    @milk = milk
-  end
-  
   def add_flavor(flavor)
     @flavor = flavor
   end
