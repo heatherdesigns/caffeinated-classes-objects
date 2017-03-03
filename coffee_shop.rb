@@ -4,13 +4,12 @@
 # soda = 3.75 mg
 
 require_relative "./caffeinated_beverage.rb"
+require_relative "./milk.rb"
 
 class CoffeeShop
   
   # create hash to store a single customer's order
   customer_order = Hash.new(0)
-  puts customer_order.keys  
-  puts customer_order.values
  
   # first customer order
   order_1 = Caffeinated_Beverage.new("coffee", 12, 25)
@@ -18,8 +17,8 @@ class CoffeeShop
   customer_order["ounces"]= order_1.num_ounces
   customer_order["caffeine (mg)"]= order_1.caffeine_per_oz
   
-  order_1.add_milk("almond milk")
-  customer_order["milk"]= order_1.milk
+  add_milk = Milk.new("coconut milk")
+  customer_order["milk"]= add_milk.milk.to_s
   
   order_1.add_flavor("vanilla")
   customer_order["flavor"]= order_1.flavor
@@ -51,13 +50,13 @@ class CoffeeShop
   
   # fourth customer order
   order_4 = Caffeinated_Beverage.new("chai", 8, 3.5)
-  order_4.add_milk("coconut milk")
   order_4.add_flavor("hazelnut")
   customer_order.clear
   customer_order["beverage"]= order_4.beverage
   customer_order["ounces"]= order_4.num_ounces
   customer_order["caffeine (mg)"]= order_4.caffeine_per_oz
-  customer_order["milk"]= order_4.milk
+  add_milk = Milk.new("skim milk")
+  customer_order["milk"]= add_milk.milk.to_s
   customer_order["flavor"]= order_4.flavor  
   
   puts "-" * 20; puts "Customer 4:"

@@ -8,7 +8,7 @@ class Caffeinated_Beverage
   
   attr_accessor :beverage, :num_ounces, :caffeine_per_oz, :milk, :flavor, :shot
   
-  def initialize(beverage, num_ounces, caffeine_per_oz) # idea from Yock: option to serve hot or serve cold
+  def initialize(beverage, num_ounces, caffeine_per_oz) 
     @beverage = beverage
     @num_ounces = num_ounces
     @caffeine_per_oz = caffeine_per_oz
