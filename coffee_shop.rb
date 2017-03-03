@@ -1,5 +1,5 @@
-# Caffeine per oz
-# coffee = 25 mg
+# Approximate values for caffeine per oz
+# coffee = 18 mg
 # tea = 3.5 mg
 # soda = 3.75 mg
 
@@ -14,10 +14,10 @@ class CoffeeShop
   customer_order = Hash.new(0)
  
   # first customer order
-  order_1 = Caffeinated_Beverage.new("coffee", 12, 25)
+  order_1 = Caffeinated_Beverage.new("coffee", 12, 18)
   customer_order["beverage"] = order_1.beverage   # move hash into caffeinated beverage class and create method to do this automatically
   customer_order["ounces"] = order_1.num_ounces
-  customer_order["caffeine (mg)"] = order_1.caffeine_per_oz
+  customer_order["caffeine (mg)"] = order_1.caffeinate(order_1.num_ounces)
   
   add_milk = Milk.new("coconut milk")
   customer_order["milk"] = add_milk.milk
@@ -33,7 +33,7 @@ class CoffeeShop
   customer_order.clear # clear hash from previous order contents
   customer_order["beverage"] = order_2.beverage
   customer_order["ounces"] = order_2.num_ounces
-  customer_order["caffeine (mg)"] = order_2.caffeine_per_oz
+  customer_order["caffeine (mg)"] = order_2.caffeinate(order_2.num_ounces)
   
   puts "-" * 20; puts "Customer 2:"
   order_2.display_order(customer_order)  
@@ -44,7 +44,7 @@ class CoffeeShop
   customer_order.clear
   customer_order["beverage"] = order_3.beverage
   customer_order["ounces"] = order_3.num_ounces
-  customer_order["caffeine (mg)"] = order_3.caffeine_per_oz
+  customer_order["caffeine (mg)"] = order_3.caffeinate(order_3.num_ounces)
   customer_order["flavor"] = add_flavor.flavor
   
   puts "-" * 20; puts "Customer 3:"
@@ -53,11 +53,12 @@ class CoffeeShop
   # fourth customer order
   order_4 = Caffeinated_Beverage.new("chai", 8, 3.5)
   #order_4.add_flavor("hazelnut")
+  
   add_flavor = Flavor.new("hazelnut")
   customer_order.clear
   customer_order["beverage"] = order_4.beverage
   customer_order["ounces"] = order_4.num_ounces
-  customer_order["caffeine (mg)"] = order_4.caffeine_per_oz
+  customer_order["caffeine (mg)"] = order_4.caffeinate(order_4.num_ounces)
   add_milk = Milk.new("skim milk")
   customer_order["milk"] = add_milk.milk.to_s
   customer_order["flavor"] = add_flavor.flavor  
@@ -66,12 +67,12 @@ class CoffeeShop
   order_4.display_order(customer_order)   
   
   # fifth customer order
-  order_5 = Caffeinated_Beverage.new("coffee", 24, 25)
+  order_5 = Caffeinated_Beverage.new("coffee", 24, 18)
   add_espresso = Espresso.new(2)
   customer_order.clear
   customer_order["beverage"] = order_5.beverage
   customer_order["ounces"] = order_5.num_ounces
-  customer_order["caffeine (mg)"] = (order_5.caffeine_per_oz + add_espresso.shot_espresso)
+  customer_order["caffeine (mg)"] = (order_5.caffeinate(order_5.num_ounces) + add_espresso.shot_espresso)
   
   puts "-" * 20; puts "Customer 5:"
   order_5.display_order(customer_order)     

@@ -1,13 +1,6 @@
-# Caffeine per oz
-# coffee = 25 mg
-# tea = 3.5 mg
-# soda = 3.75 mg
-
-# note: fix caffeiate method - needs to account and calculate according to number of ounces in a drink
-
 class Caffeinated_Beverage
   
-  attr_accessor :beverage, :num_ounces, :caffeine_per_oz, :milk, :flavor, :shot
+  attr_accessor :beverage, :num_ounces, :caffeine_per_oz
   
   def initialize(beverage, num_ounces, caffeine_per_oz) 
     @beverage = beverage
