@@ -6,6 +6,7 @@
 require_relative "./caffeinated_beverage.rb"
 require_relative "./milk.rb"
 require_relative "./flavor.rb"
+require_relative "./espresso.rb"
 
 class CoffeeShop
   
@@ -66,11 +67,11 @@ class CoffeeShop
   
   # fifth customer order
   order_5 = Caffeinated_Beverage.new("coffee", 24, 25)
-  order_5.add_espresso(2)
+  add_espresso = Espresso.new(2)
   customer_order.clear
   customer_order["beverage"] = order_5.beverage
   customer_order["ounces"] = order_5.num_ounces
-  customer_order["caffeine (mg)"] = (order_5.caffeine_per_oz + order_5.shot) # add caffeine in espresso
+  customer_order["caffeine (mg)"] = (order_5.caffeine_per_oz + add_espresso.shot_espresso)
   
   puts "-" * 20; puts "Customer 5:"
   order_5.display_order(customer_order)     

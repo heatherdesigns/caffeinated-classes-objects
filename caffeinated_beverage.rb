@@ -3,6 +3,7 @@
 # tea = 3.5 mg
 # soda = 3.75 mg
 
+# note: fix caffeiate method - needs to account and calculate according to number of ounces in a drink
 
 class Caffeinated_Beverage
   
@@ -17,10 +18,6 @@ class Caffeinated_Beverage
   def caffeinate(num_ounces)
     num_ounces *= caffeine_per_oz
   end 
-  
-  def add_espresso(shot) # 75 mg in a 1 ounce shot of espresso
-    @shot = shot * 75.0
-  end
   
   def output
     puts "The average #{num_ounces} ounce #{beverage} has #{caffeinate(num_ounces)} mg of caffeine."
