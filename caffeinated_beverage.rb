@@ -21,7 +21,7 @@ class Caffeinated_Beverage
   end
   
   def output
-    puts "The average #{num_ounces} ounce #{beverage} has #{caffeinate(num_ounces)} mg of caffeine."
+    puts "The average #{num_ounces} ounce #{beverage} has #{caffeinate(beverage, num_ounces)} mg of caffeine."
   end 
   
   def display_order(order)
