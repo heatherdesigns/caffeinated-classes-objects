@@ -3,18 +3,18 @@
 # tea = 3.5 mg
 # soda = 3.75 mg
 
-require_relative "./caffeinated_beverage.rb"
-require_relative "./milk.rb"
-require_relative "./flavor.rb"
-require_relative "./espresso.rb"
+require_relative "./caffeinated_beverage"
+require_relative "./milk"
+require_relative "./flavor"
+require_relative "./espresso"
 
 class CoffeeShop
   
   # create hash to store a single customer's order
-  customer_order = Hash.new(0) # creating a class to replace this!!!!!
+  customer_order = Hash.new 
   
   # create an array to collect and store all customer orders
-  store_orders = Array.new(0)
+  store_orders = Array.new
  
   # first customer order
   order_1 = Caffeinated_Beverage.new("coffee", 12)
@@ -29,10 +29,10 @@ class CoffeeShop
   puts "-" * 20; puts "Customer 1:"
   order_1.display_order(customer_order)
   
-  store_orders.push(customer_order) #push first order onto array
+  store_orders << customer_order
   
-  puts "This is the hash of order 1: #{customer_order.each { |key, value| puts "#{key}: #{value}" }}"
-  puts "Order 1 in the array: #{store_orders[0]}"
+  # puts "This is the hash of order 1: #{customer_order.each { |key, value| puts "#{key}: #{value}" }}"
+  puts "Order 1 in the array: #{store_orders}"
   
   # second customer order  
   order_2 = Caffeinated_Beverage.new("tea", 16)
@@ -44,7 +44,7 @@ class CoffeeShop
   puts "-" * 20; puts "Customer 2:"
   order_2.display_order(customer_order)  
   
-  store_orders.push(customer_order) # push 2nd order onto array
+  store_orders << customer_order
   puts "Order 2 in the array: #{store_orders[1]}"
 
   # third customer order
@@ -59,7 +59,8 @@ class CoffeeShop
   puts "-" * 20; puts "Customer 3:"
   order_3.display_order(customer_order)  
   
-  store_orders.push(customer_order) # push 3rd order onto array
+  store_orders << customer_order
+  puts "Order 3 in the array: #{store_orders[2]}"
   
   # fourth customer order
   order_4 = Caffeinated_Beverage.new("tea", 8)
@@ -75,7 +76,8 @@ class CoffeeShop
   puts "-" * 20; puts "Customer 4:"
   order_4.display_order(customer_order)  
   
-  store_orders.push(customer_order) # push 4th order onto array 
+  store_orders << customer_order
+  puts "Order 4 in the array: #{store_orders[3]}"
   
   # fifth customer order
   order_5 = Caffeinated_Beverage.new("coffee", 24)
@@ -88,12 +90,14 @@ class CoffeeShop
   puts "-" * 20; puts "Customer 5:"
   order_5.display_order(customer_order)   
   
-  store_orders.push(customer_order) # push 5th order onto array 
+  store_orders << customer_order
+  puts "Order 5 in the array: #{store_orders[4]}"
     
   # loops through array of orders and print - nope. 
-  store_orders.each do |order|
-    puts "#{order}"
+  store_orders.each do |key, value|
+    puts "#{key}: #{value}"   
   end
+  
   
   
   # get customer name

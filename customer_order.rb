@@ -1,39 +1,25 @@
-require_relative "./caffeinated_beverage.rb"
-require_relative "./milk.rb"
-require_relative "./flavor.rb"
-require_relative "./espresso.rb"
+require_relative "./caffeinated_beverage"
+require_relative "./milk"
+require_relative "./flavor"
+require_relative "./espresso"
+require_relative "./size"
 
-# see Treehouse contact list
-
-class CustomerOrder < Caffeinated_Beverage
+class CustomerOrder
       
-=begin  
-    def ask(question, kind = "string")
-      print question + " "
-      answer = gets.chomp
-      answer = answer.to_i if kind == "number"
-      return answer
-    end
-=end
-    
-    def add_order
+      # need: beverage, size, num_ounces, caffeine, espresso, milk, flavor
       
       puts "What would you like to drink?"
-      beverage = gets.chomp
+      @beverage = gets.chomp
       
-      puts "What size?"
-      num_ounces = gets.chomp
+      puts "What size? (small, medium or large)"
+      @size = gets.chomp
       
-      return CustomerOrder.new(beverage, num_ounces)
+      @num_ounces = ounces_make_size
       
-    end
- 
 end
 
-drink = CustomerOrder.new("", 0) # start with blank slate
-drink.output
-new_drink = drink.add_order # assign output of new add_order to a new_drink
-new_drink.output
+order = CustomerOrder.new
+
 
 
 
