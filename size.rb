@@ -2,7 +2,7 @@ class Size
   
   attr_accessor :size
   
-  def ounces_make_size
+  def size_in_ounces
     while @size != "small" && @size != "medium" && @size != "large"
       puts "Please enter small, medium or large for size of drink: "
       @size = gets.chomp
@@ -13,6 +13,8 @@ class Size
         else
           @num_ounces = 16
         end
-  end
+    end # while
+    @num_ounces
+  end # def
   
-end
+end  # class
